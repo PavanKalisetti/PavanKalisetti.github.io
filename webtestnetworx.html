@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirect to App</title>
+  <script>
+    function redirectToAppOrStore() {
+      var appLink = "myscheme://example.com/gizmos"; // Replace with your app's deep link
+      var appStoreLink = "https://play.google.com/store/apps/details?id=com.example.yourapp"; // Replace with your app's Play Store link
+
+      window.location.href = appLink; // Try to open the app's deep link
+
+      setTimeout(function() {
+        // If app didn't open, redirect to the Play Store
+        window.location.href = appStoreLink;
+      }, 500);
+    }
+  </script>
+</head>
+<body onload="redirectToAppOrStore()">
+  <!-- Optional: You can display a message or a loading spinner while checking for the app -->
+  <p>Redirecting...</p>
+</body>
+</html>
