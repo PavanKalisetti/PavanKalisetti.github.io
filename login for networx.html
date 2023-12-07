@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Basic styling for the login form */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .login-box {
+      width: 80%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    .login-btn {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .login-btn {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid #fff;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      display: none;
+    }
+    @keyframes spin {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    @media (max-width: 480px) {
+      /* Adjustments for smaller screens */
+      .login-box {
+        width: 90%;
+        margin-top: 20px;
+      }
+      input[type="text"],
+      input[type="password"],
+      .login-btn {
+        padding: 8px;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <br>
+      <input type="password" id="password" placeholder="Password" required>
+      <br>
+      <div class="login-btn" onclick="login()">
+        Login
+        <div class="progress"></div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function login() {
+      var progress = document.querySelector('.progress');
+      progress.style.display = 'block';
+
+      var loginButton = document.querySelector('.login-btn');
+      loginButton.style.pointerEvents = 'none'; // Disable button clicks
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      setTimeout(function() {
+        if (username === 'user' && password === 'password') {
+          hideProgress();
+        } else {
+          hideProgress();
+          loginButton.style.pointerEvents = 'auto'; // Enable button clicks
+        }
+      }, 2000); // Simulated delay of 2 seconds (replace this with your actual login logic)
+    }
+
+    function hideProgress() {
+      var progress = document.querySelector('.progress');
+      progress.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
