@@ -1,0 +1,132 @@
+/* Common styles */
+*{
+  background-color: black;
+}
+#name h1 {
+    color: aliceblue;
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-family: "Shadows Into Light", cursive;
+  }
+  .boxes {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  h3{
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  /* Mobile styles (default) */
+body {
+display: flex;
+justify-content: center;
+flex-direction: column;
+font-size: 16px;
+text-align: center;
+background-color: black;
+color: aliceblue;
+}
+#box{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+gap: 13rem;
+font-family: "Permanent Marker", cursive;
+
+}
+.boxes{
+display: flex;
+flex-direction: column;
+cursor:pointer;
+border: 5px solid pink;
+}
+
+body {
+    font-size: 16px;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+}
+
+#name h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+}
+
+.boxes {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Desktop and tablet styles */
+@media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #box {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .boxes {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        /* border: 5px solid pink; */
+    }
+}
+.boxes{
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 5px solid pink;
+    cursor: pointer;
+    animation: cursor-animation 1s infinite;
+  }
+  
+  @keyframes cursor-animation {
+    0% {
+      border-color:#ff00ff ;
+    }
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color:#ff00ff;
+    }
+  }
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    #box {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxes {
+        width: 90%;
+        margin: 5px auto;
+    }
+
+    #name h1 {
+        font-size: 3rem;
+    }
+}
